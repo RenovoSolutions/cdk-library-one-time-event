@@ -14,7 +14,7 @@ export interface IAtProps {
   /**
    * The future date to use for one time event.
    */
-  date?: Date;
+  date: Date;
 }
 
 export function dateToCron(date:Date) {
@@ -29,12 +29,12 @@ export function dateToCron(date:Date) {
 
 export class OnDeploy extends cdk.Construct {
 
-  public readonly schedule: events.Schedule
+  public readonly schedule: events.Schedule;
 
   constructor(scope: cdk.Construct, id: string, props: IOnDeployProps) {
     super(scope, id);
 
-    const date = new Date()
+    const date = new Date();
     const minutesToAdd = props.offsetMinutes || 10;
     const future = new Date(date.getTime() + minutesToAdd * 60000);
 
@@ -44,7 +44,7 @@ export class OnDeploy extends cdk.Construct {
 
 export class At extends cdk.Construct {
 
-  public readonly schedule: events.Schedule
+  public readonly schedule: events.Schedule;
 
   constructor(scope: cdk.Construct, id: string, props: IAtProps) {
     super(scope, id);

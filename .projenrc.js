@@ -9,7 +9,7 @@ const project = new AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/RenovoSolutions/cdk-library-one-time-event.git',
   cdkDependencies: [
     '@aws-cdk/core',
-    '@aws-cdk/aws-events'
+    '@aws-cdk/aws-events',
   ],
   keywords: [
     'cdk',
