@@ -125,11 +125,11 @@ public readonly offsetMinutes: number;
 ```
 
 - *Type:* `number`
+- *Default:* 10
 
 The number of minutes to add to the current time when generating the expression.
 
 Should exceed the expected time for the appropriate resources to converge.
-Defaults to 10 mins.
 
 ---
 
