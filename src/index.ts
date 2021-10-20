@@ -5,7 +5,9 @@ export interface IOnDeployProps {
   /**
    * The number of minutes to add to the current time when generating the expression.
    * Should exceed the expected time for the appropriate resources to converge.
-   * Defaults to 10 mins.
+   *
+   *
+   * @default 10
    */
   offsetMinutes?: number;
 }
