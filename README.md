@@ -10,7 +10,7 @@ An AWS CDK Construct library to create one time event [schedules](https://docs.a
   - At: A one time even schedule for any future `Date()`
 
 ## API Doc
-See [API](API.md)
+See [API](API.md)saassa
 
 ## Examples
 ### Typescript - run after deploy, offset 15mins
