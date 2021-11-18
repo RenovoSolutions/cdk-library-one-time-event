@@ -1,6 +1,4 @@
 const { AwsCdkConstructLibrary, NpmAccess } = require('projen');
-const { MergifyConditionalOperator } = require('projen/lib/github');
-
 const project = new AwsCdkConstructLibrary({
   author: 'Renovo Solutions',
   authorAddress: 'webmaster+cdk@renovo1.com',
@@ -30,7 +28,7 @@ const project = new AwsCdkConstructLibrary({
     mergifyOptions: {
       rules: [
         {
-          name: 'Automatically merge PRs that meet merge conditions',
+          name: 'Automatically merge dependency upgrade PRs without approval if they pass build',
           actions: {
             merge: {
               method: 'squash',
@@ -41,32 +39,13 @@ const project = new AwsCdkConstructLibrary({
             delete_head_branch: {},
           },
           conditions: [
-            'check-success=Rule: MergableConditionsCheck',
+            'label=auto-approve',
+            'label=deps-upgrade',
+            '-label~=(do-not-merge)',
+            'status-success=build',
+            'author=github-actions[bot]',
+            'title="chore(deps): upgrade dependencies"',
           ],
-        },
-        {
-          name: 'MergableConditionsCheck',
-          conditions: [{
-            or: [
-              {
-                and: [
-                  'label=auto-approve',
-                  'label=deps-upgrade',
-                  '-label~=(do-not-merge)',
-                  'status-success=build',
-                  'author=github-actions[bot]',
-                  'title="chore(deps): upgrade dependencies"',
-                ],
-              },
-              {
-                and: [
-                  '#approved-reviews-by>=1',
-                  '-label~=(do-not-merge)',
-                  'status-success=build',
-                ],
-              },
-            ],
-          }],
         },
       ],
     },
