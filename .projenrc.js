@@ -41,7 +41,7 @@ const project = new AwsCdkConstructLibrary({
             delete_head_branch: {},
           },
           conditions: [
-            'check-status=MergableConditionsCheck',
+            'check-status="Rule: MergableConditionsCheck"',
           ],
         },
         {
