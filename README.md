@@ -2,6 +2,8 @@
 
 [![build](https://github.com/RenovoSolutions/cdk-library-one-time-event/actions/workflows/build.yml/badge.svg)](https://github.com/RenovoSolutions/cdk-library-one-time-event/workflows/build.yml)
 
+foo
+
 An AWS CDK Construct library to create one time event [schedules](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-events.Schedule.html).
 
 ## Features
