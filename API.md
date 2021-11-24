@@ -9,7 +9,7 @@
 ```typescript
 import { At } from '@renovosolutions/cdk-library-one-time-event'
 
-new At(scope: Construct, id: string, props: IAtProps)
+new At(scope: Construct, id: string, props: AtProps)
 ```
 
 ##### `scope`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.At.parameter.scope"></a>
@@ -26,7 +26,7 @@ new At(scope: Construct, id: string, props: IAtProps)
 
 ##### `props`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.At.parameter.props"></a>
 
-- *Type:* [`@renovosolutions/cdk-library-one-time-event.IAtProps`](#@renovosolutions/cdk-library-one-time-event.IAtProps)
+- *Type:* [`@renovosolutions/cdk-library-one-time-event.AtProps`](#@renovosolutions/cdk-library-one-time-event.AtProps)
 
 ---
 
@@ -52,7 +52,7 @@ public readonly schedule: Schedule;
 ```typescript
 import { OnDeploy } from '@renovosolutions/cdk-library-one-time-event'
 
-new OnDeploy(scope: Construct, id: string, props: IOnDeployProps)
+new OnDeploy(scope: Construct, id: string, props: OnDeployProps)
 ```
 
 ##### `scope`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.OnDeploy.parameter.scope"></a>
@@ -69,7 +69,7 @@ new OnDeploy(scope: Construct, id: string, props: IOnDeployProps)
 
 ##### `props`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.OnDeploy.parameter.props"></a>
 
-- *Type:* [`@renovosolutions/cdk-library-one-time-event.IOnDeployProps`](#@renovosolutions/cdk-library-one-time-event.IOnDeployProps)
+- *Type:* [`@renovosolutions/cdk-library-one-time-event.OnDeployProps`](#@renovosolutions/cdk-library-one-time-event.OnDeployProps)
 
 ---
 
@@ -88,18 +88,19 @@ public readonly schedule: Schedule;
 ---
 
 
+## Structs <a name="Structs"></a>
 
+### AtProps <a name="@renovosolutions/cdk-library-one-time-event.AtProps"></a>
 
-## Protocols <a name="Protocols"></a>
+#### Initializer <a name="[object Object].Initializer"></a>
 
-### IAtProps <a name="@renovosolutions/cdk-library-one-time-event.IAtProps"></a>
+```typescript
+import { AtProps } from '@renovosolutions/cdk-library-one-time-event'
 
-- *Implemented By:* [`@renovosolutions/cdk-library-one-time-event.IAtProps`](#@renovosolutions/cdk-library-one-time-event.IAtProps)
+const atProps: AtProps = { ... }
+```
 
-
-#### Properties <a name="Properties"></a>
-
-##### `date`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.IAtProps.property.date"></a>
+##### `date`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.AtProps.property.date"></a>
 
 ```typescript
 public readonly date: Date;
@@ -111,14 +112,17 @@ The future date to use for one time event.
 
 ---
 
-### IOnDeployProps <a name="@renovosolutions/cdk-library-one-time-event.IOnDeployProps"></a>
+### OnDeployProps <a name="@renovosolutions/cdk-library-one-time-event.OnDeployProps"></a>
 
-- *Implemented By:* [`@renovosolutions/cdk-library-one-time-event.IOnDeployProps`](#@renovosolutions/cdk-library-one-time-event.IOnDeployProps)
+#### Initializer <a name="[object Object].Initializer"></a>
 
+```typescript
+import { OnDeployProps } from '@renovosolutions/cdk-library-one-time-event'
 
-#### Properties <a name="Properties"></a>
+const onDeployProps: OnDeployProps = { ... }
+```
 
-##### `offsetMinutes`<sup>Optional</sup> <a name="@renovosolutions/cdk-library-one-time-event.IOnDeployProps.property.offsetMinutes"></a>
+##### `offsetMinutes`<sup>Optional</sup> <a name="@renovosolutions/cdk-library-one-time-event.OnDeployProps.property.offsetMinutes"></a>
 
 ```typescript
 public readonly offsetMinutes: number;
@@ -132,4 +136,6 @@ The number of minutes to add to the current time when generating the expression.
 Should exceed the expected time for the appropriate resources to converge.
 
 ---
+
+
 

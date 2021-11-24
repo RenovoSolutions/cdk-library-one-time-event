@@ -1,7 +1,7 @@
 import * as events from '@aws-cdk/aws-events';
 import * as cdk from '@aws-cdk/core';
 
-export interface IOnDeployProps {
+export interface OnDeployProps {
   /**
    * The number of minutes to add to the current time when generating the expression.
    * Should exceed the expected time for the appropriate resources to converge.
@@ -9,14 +9,14 @@ export interface IOnDeployProps {
    *
    * @default 10
    */
-  offsetMinutes?: number;
+  readonly offsetMinutes?: number;
 }
 
-export interface IAtProps {
+export interface AtProps {
   /**
    * The future date to use for one time event.
    */
-  date: Date;
+  readonly date: Date;
 }
 
 export function dateToCron(date:Date) {
@@ -33,7 +33,7 @@ export class OnDeploy extends cdk.Construct {
 
   public readonly schedule: events.Schedule;
 
-  constructor(scope: cdk.Construct, id: string, props: IOnDeployProps) {
+  constructor(scope: cdk.Construct, id: string, props: OnDeployProps) {
     super(scope, id);
 
     const date = new Date();
@@ -48,7 +48,7 @@ export class At extends cdk.Construct {
 
   public readonly schedule: events.Schedule;
 
-  constructor(scope: cdk.Construct, id: string, props: IAtProps) {
+  constructor(scope: cdk.Construct, id: string, props: AtProps) {
     super(scope, id);
 
     this.schedule = events.Schedule.expression('cron(' + dateToCron(props.date) + ')');

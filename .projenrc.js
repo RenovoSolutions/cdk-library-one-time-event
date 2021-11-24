@@ -73,5 +73,10 @@ const project = new AwsCdkConstructLibrary({
     dotNetNamespace: 'renovosolutions',
     packageId: 'Renovo.AWSCDK.OneTimeEvent',
   },
+  jestOptions: {
+    jestConfig: {
+      timers: 'fake',
+    },
+  },
 });
 project.synth();
