@@ -2,7 +2,7 @@ const { AwsCdkConstructLibrary, NpmAccess } = require('projen');
 const project = new AwsCdkConstructLibrary({
   author: 'Renovo Solutions',
   authorAddress: 'webmaster+cdk@renovo1.com',
-  cdkVersion: '1.134.0',
+  cdkVersion: '2.0.0',
   defaultReleaseBranch: 'master',
   majorVersion: '2',
   defaultReleaseBranch: 'master',
@@ -15,8 +15,10 @@ const project = new AwsCdkConstructLibrary({
   description: 'AWS CDK Construct Library to create one time event schedules.',
   repositoryUrl: 'https://github.com/RenovoSolutions/cdk-library-one-time-event.git',
   cdkDependencies: [
-    '@aws-cdk/core',
-    '@aws-cdk/aws-events',
+    'aws-cdk-lib',
+  ],
+  deps: [
+    'constructs@^10.0.0',
   ],
   keywords: [
     'cdk',
@@ -85,5 +87,6 @@ const project = new AwsCdkConstructLibrary({
       timers: 'fake',
     },
   },
+  workflowNodeVersion: '14.17.0'
 });
 project.synth();

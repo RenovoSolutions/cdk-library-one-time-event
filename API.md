@@ -14,7 +14,7 @@ new At(scope: Construct, id: string, props: AtProps)
 
 ##### `scope`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.At.parameter.scope"></a>
 
-- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+- *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
@@ -40,7 +40,7 @@ new At(scope: Construct, id: string, props: AtProps)
 public readonly schedule: Schedule;
 ```
 
-- *Type:* [`@aws-cdk/aws-events.Schedule`](#@aws-cdk/aws-events.Schedule)
+- *Type:* [`aws-cdk-lib.aws_events.Schedule`](#aws-cdk-lib.aws_events.Schedule)
 
 ---
 
@@ -57,7 +57,7 @@ new OnDeploy(scope: Construct, id: string, props: OnDeployProps)
 
 ##### `scope`<sup>Required</sup> <a name="@renovosolutions/cdk-library-one-time-event.OnDeploy.parameter.scope"></a>
 
-- *Type:* [`@aws-cdk/core.Construct`](#@aws-cdk/core.Construct)
+- *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
@@ -83,7 +83,7 @@ new OnDeploy(scope: Construct, id: string, props: OnDeployProps)
 public readonly schedule: Schedule;
 ```
 
-- *Type:* [`@aws-cdk/aws-events.Schedule`](#@aws-cdk/aws-events.Schedule)
+- *Type:* [`aws-cdk-lib.aws_events.Schedule`](#aws-cdk-lib.aws_events.Schedule)
 
 ---
 
