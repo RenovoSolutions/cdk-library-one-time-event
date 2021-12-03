@@ -87,6 +87,6 @@ const project = new AwsCdkConstructLibrary({
       timers: 'fake',
     },
   },
-  workflowNodeVersion: '14.17.0'
+  workflowNodeVersion: '14.17.0',
 });
 project.synth();
