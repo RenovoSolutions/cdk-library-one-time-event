@@ -4,6 +4,13 @@ const project = new AwsCdkConstructLibrary({
   authorAddress: 'webmaster+cdk@renovo1.com',
   cdkVersion: '1.134.0',
   defaultReleaseBranch: 'master',
+  majorVersion: '2',
+  defaultReleaseBranch: 'master',
+  releaseBranches: {
+    v1: {
+      majorVersion: '1',
+    },
+  },
   name: '@renovosolutions/cdk-library-one-time-event',
   description: 'AWS CDK Construct Library to create one time event schedules.',
   repositoryUrl: 'https://github.com/RenovoSolutions/cdk-library-one-time-event.git',
