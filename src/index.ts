@@ -1,5 +1,5 @@
-import * as events from '@aws-cdk/aws-events';
-import * as cdk from '@aws-cdk/core';
+import { aws_events as events } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 
 export interface OnDeployProps {
   /**
@@ -29,11 +29,11 @@ export function dateToCron(date:Date) {
   return `${minutes} ${hours} ${days} ${months} ? ${years}`;
 };
 
-export class OnDeploy extends cdk.Construct {
+export class OnDeploy extends Construct {
 
   public readonly schedule: events.Schedule;
 
-  constructor(scope: cdk.Construct, id: string, props: OnDeployProps) {
+  constructor(scope: Construct, id: string, props: OnDeployProps) {
     super(scope, id);
 
     const date = new Date();
@@ -44,11 +44,11 @@ export class OnDeploy extends cdk.Construct {
   }
 }
 
-export class At extends cdk.Construct {
+export class At extends Construct {
 
   public readonly schedule: events.Schedule;
 
-  constructor(scope: cdk.Construct, id: string, props: AtProps) {
+  constructor(scope: Construct, id: string, props: AtProps) {
     super(scope, id);
 
     this.schedule = events.Schedule.expression('cron(' + dateToCron(props.date) + ')');
