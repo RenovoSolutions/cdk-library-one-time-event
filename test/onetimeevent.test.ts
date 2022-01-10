@@ -1,5 +1,5 @@
-import { SynthUtils } from '@aws-cdk/assert';
 import { aws_events as events, App, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
 import * as oneTimeEvents from '../src/index';
 
 jest.setSystemTime(new Date('2020-01-01').getTime());
@@ -14,5 +14,5 @@ test('Snapshot', () => {
     }).schedule,
   });
 
-  expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot();
+  expect(Template.fromStack(stack)).toMatchSnapshot();
 });

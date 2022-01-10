@@ -1,8 +1,8 @@
-const { AwsCdkConstructLibrary, NpmAccess } = require('projen');
-const project = new AwsCdkConstructLibrary({
+const { awscdk, javascript } = require('projen');
+const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Renovo Solutions',
   authorAddress: 'webmaster+cdk@renovo1.com',
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.5.0',
   defaultReleaseBranch: 'master',
   majorVersion: '2',
   defaultReleaseBranch: 'master',
@@ -14,12 +14,6 @@ const project = new AwsCdkConstructLibrary({
   name: '@renovosolutions/cdk-library-one-time-event',
   description: 'AWS CDK Construct Library to create one time event schedules.',
   repositoryUrl: 'https://github.com/RenovoSolutions/cdk-library-one-time-event.git',
-  cdkDependencies: [
-    'aws-cdk-lib',
-  ],
-  deps: [
-    'constructs@^10.0.0',
-  ],
   keywords: [
     'cdk',
     'aws-cdk',
@@ -69,9 +63,8 @@ const project = new AwsCdkConstructLibrary({
     },
   },
   releaseToNpm: true,
-  releaseWorkflow: true,
-  npmAccess: NpmAccess.PUBLIC,
-  cdkAssert: true,
+  release: true,
+  npmAccess: javascript.NpmAccess.PUBLIC,
   docgen: true,
   eslint: true,
   publishToPypi: {
