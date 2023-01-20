@@ -3,7 +3,7 @@ import { Template } from 'aws-cdk-lib/assertions';
 import * as oneTimeEvents from '../src/index';
 
 const date = new Date('2020-01-15');
-date.setHours(15);
+date.setHours(10);
 date.setMinutes(23);
 
 jest.setSystemTime(date.getTime());

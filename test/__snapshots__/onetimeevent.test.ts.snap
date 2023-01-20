@@ -12,7 +12,7 @@ Object {
   "Resources": Object {
     "triggerImmediate338B3A22": Object {
       "Properties": Object {
-        "ScheduleExpression": "cron(33 20 14 1 ? 2020)",
+        "ScheduleExpression": "cron(33 15 14 1 ? 2020)",
         "State": "ENABLED",
       },
       "Type": "AWS::Events::Rule",
