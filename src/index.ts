@@ -22,7 +22,7 @@ export interface AtProps {
 export function dateToCron(date:Date) {
   const minutes = date.getUTCMinutes();
   const hours = date.getUTCHours();
-  const days = date.getUTCDay();
+  const days = date.getDate() + 1;
   const months = date.getUTCMonth() + 1;
   const years = date.getUTCFullYear();
 

@@ -2,7 +2,7 @@ import { aws_events as events, App, Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
 import * as oneTimeEvents from '../src/index';
 
-jest.setSystemTime(new Date('2020-01-01').getTime());
+jest.setSystemTime(new Date('2020-01-15').getTime());
 
 test('Snapshot', () => {
   const app = new App();
