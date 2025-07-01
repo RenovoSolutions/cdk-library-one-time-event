@@ -2,7 +2,8 @@ import { awscdk, javascript } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Renovo Solutions',
   authorAddress: 'webmaster+cdk@renovo1.com',
-  cdkVersion: '2.86.0',
+  cdkVersion: '2.202.0',
+  jsiiVersion: '^5.8.0',
   projenrcTs: true,
   defaultReleaseBranch: 'master',
   majorVersion: 2,
@@ -70,7 +71,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   eslint: true,
   publishToPypi: {
     distName: 'renovosolutions.aws-cdk-one-time-event',
-    module: 'one_time_event',
+    module: 'renovosolutions_one_time_event',
   },
   publishToNuget: {
     dotNetNamespace: 'renovosolutions',
@@ -78,7 +79,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   },
   jestOptions: {
     jestConfig: {
-      timers: 'fake',
+      fakeTimers: {
+        enableGlobally: true,
+      },
     },
   },
 });
